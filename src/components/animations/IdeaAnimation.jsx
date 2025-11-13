@@ -5,7 +5,7 @@ import animacaoIdeia from '../../assets/animations/idea.json';
 
 function IdeaAnimation() {
   return (
-    <div className="w-full h-80 bg-white text-gray-400 flex items-center justify-center">
+    <div className="w-full h-80  bg-[#f1f1f1] text-gray-400 flex items-center justify-center">
       <Lottie
         loop
         animationData={animacaoIdeia}

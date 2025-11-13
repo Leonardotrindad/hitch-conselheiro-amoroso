@@ -1,41 +1,44 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Nav() {
     return (
-        <nav className="w-full bg-white shadow-sm border-b border-gray-600">
-            <ul className="flex w-full">
+        // MUDANÇAS AQUI:
+        // 1. Troquei 'py-4' por 'py-3' (diminui o padding vertical)
+        // 2. Removi 'shadow-sm' (a borda já faz a separação)
+        // 3. Adicionei 'border-b border-black' (borda preta)
+        <nav className="w-full bg-white border-b border-black py-3">
+            
+            <div className="container mx-auto flex justify-between items-center px-6">
 
-                <li className="flex-1 text-center border-l border-r border-gray-600">
-                    <a href="/chat" className="font-medium text-gray-600 hover:bg-pink-100 hover:text-pink-700 transition-colors duration-200 block py-6">
-                        Chat
-                    </a>
-                </li>
+                {/* 1. Logo */}
+                <Link to="/">
+                    {/* MUDANÇA AQUI:
+                      1. Aumentei a logo de 'h-14' para 'h-16' 
+                    */}
+                    <img src="/public/logo_hitch.png" alt="Logo" className="h-16 w-auto" />
+                </Link>
 
-                <li className="flex-1 text-center border-r border-gray-600">
-                    <a href="/blog" className="font-medium text-gray-600 hover:bg-pink-100 hover:text-pink-700 transition-colors duration-200 block py-6">
-                        Blog
-                    </a>
-                </li>
-
-                <li className="flex-1 border-r border-gray-600">
-                    <a href="/" className="flex justify-center items-center py-1 transition-colors duration-200 hover:bg-gray-50">
-                        <img src="/public/logo_hitch.png" alt="Logo" className="h-18 w-auto" />
-                    </a>
-                </li>
-
-                <li className="flex-1 text-center border-r border-gray-600">
-                    <a href="/login" className="font-medium text-gray-600 hover:bg-pink-100 hover:text-pink-700 transition-colors duration-200 block py-6">
-                        Log In
-                    </a>
-                </li>
-
-                <li className="flex-1 text-center border-r border-gray-600">
-                    <a href="/signup" className="font-medium text-gray-600 hover:bg-pink-100 hover:text-pink-700 transition-colors duration-200 block py-6">
-                        Sign Up
-                    </a>
-                </li>
-
-            </ul>
+                {/* 2. Itens do Menu */}
+                <ul className="flex items-center space-x-8">                     
+                    <li>
+                        <Link 
+                            to="/chat" 
+                            className="font-medium text-gray-700 hover:text-[#F14A5B] transition-colors duration-200"
+                        >
+                            Chat
+                        </Link>
+                    </li>
+                    <li>
+                        <Link 
+                            to="/how-it-works" 
+                            className="font-medium text-gray-700 hover:text-[#F14A5B] transition-colors duration-200"
+                        >
+                            How It Works
+                        </Link>
+                    </li>
+                </ul>
+            </div>
         </nav>
     );
 }

@@ -5,7 +5,7 @@ import animacaoAnalise from '../../assets/animations/analise.json';
 
 function AnaliseAnimation() {
   return (
-    <div className="w-full h-80 bg-white text-gray-400 flex items-center justify-center">
+    <div className="w-full h-80  text-gray-400 flex items-center justify-center bg-[#f1f1f1]">
       <Lottie
         loop
         animationData={animacaoAnalise}

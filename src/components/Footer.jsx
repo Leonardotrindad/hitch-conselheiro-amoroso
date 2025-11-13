@@ -13,7 +13,7 @@ function Footer() {
                 </p>
                 
                 <p className="text-sm text-gray-500">
-                    Feito com ❤️ por @liv.
+                    Feito com ❤️ por liv, mell, pedro, isa, leo e natalia.
                 </p>
             </div>
         </footer>
