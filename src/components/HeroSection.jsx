@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 function HeroSection() {
   return (
     <div className="flex lg:flex-row ">
@@ -17,7 +20,7 @@ function HeroSection() {
             more clearly.
           </p>
 
-          <button
+          <Link to="/chat"
             className="mx-auto flex items-center justify-center w-64 bg-[#F2798F] text-white font-bold 
                        py-3 px-6 
                        border border-gray-900
@@ -27,11 +30,10 @@ function HeroSection() {
                        shadow-[6px_6px_0px_#111827]">
             <span className="mr-3 text-lg">Let's talk</span>
             <img src="/public/svg/chat.svg" alt="Chat with heart icon" className="ml-3 h-6 w-6" />
-          </button>
+          </Link>
         </div>
       </div>
 
-      {/* ===== COLUNA DIREITA (IMAGEM) ===== */}
     </div>
   );
 }

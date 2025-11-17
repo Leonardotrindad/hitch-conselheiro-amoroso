@@ -7,7 +7,7 @@ import Nav from "../components/Nav";
 function Home() {
   return (
     <div className="home-page flex flex-col min-h-screen">
-
+      <Nav />
  
    <HeroSection />  
 
