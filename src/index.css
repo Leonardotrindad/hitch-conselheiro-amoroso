@@ -5,3 +5,28 @@
 .font-oleo-test {
   font-family: "Oleo Script Swash Caps", cursive !important;
 }
+
+/* Melhorias para responsividade */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Garante que imagens sejam responsivas por padrão */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevenção de scroll horizontal em dispositivos móveis */
+.container {
+  max-width: 100%;
+  overflow-x: hidden;
+}

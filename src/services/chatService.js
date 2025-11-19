@@ -1,5 +1,5 @@
 // Serviço para comunicação com a API do backend
-const API_BASE_URL = '/api';
+const API_BASE_URL = 'https://hitch-conselheiro-amoroso-production.up.railway.app';
 
 export const chatService = {
 
@@ -9,19 +9,23 @@ export const chatService = {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify({ message })
       });
 
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(`Erro do servidor: ${response.status}`);
       }
 
       const data = await response.json();
       return data;
     } catch (error) {
-      console.error('Erro ao enviar mensagem:', error);
-      throw new Error('Falha na comunicação com o servidor. Tente novamente.');
+      if (error.message.includes('fetch')) {
+        throw new Error('Erro de conexão. Verifique sua internet e tente novamente.');
+      }
+      
+      throw new Error(error.message || 'Falha na comunicação com o servidor. Tente novamente.');
     }
   }
 };
