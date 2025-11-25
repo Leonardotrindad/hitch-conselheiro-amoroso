@@ -57,10 +57,20 @@ describe('Features Component', () => {
   });
 
   it('deve ter ícones para cada feature', () => {
-    const { container } = render(<Features />);
+    render(<Features />);
     
-    // Verifica se há 3 containers de ícones com as classes corretas
-    const iconContainers = container.querySelectorAll('.bg-\\[\\#F2798F\\]');
-    expect(iconContainers.length).toBeGreaterThanOrEqual(3);
+    // Verifica se há 3 containers de ícones usando data-testids
+    const iconPrivacy = screen.getByTestId('feature-icon-privacy');
+    const iconAvailability = screen.getByTestId('feature-icon-availability');
+    const iconAnalysis = screen.getByTestId('feature-icon-analysis');
+    
+    expect(iconPrivacy).toBeInTheDocument();
+    expect(iconAvailability).toBeInTheDocument();
+    expect(iconAnalysis).toBeInTheDocument();
+    
+    // Verifica classes básicas
+    expect(iconPrivacy).toHaveClass('rounded-lg');
+    expect(iconAvailability).toHaveClass('rounded-lg');
+    expect(iconAnalysis).toHaveClass('rounded-lg');
   });
 });

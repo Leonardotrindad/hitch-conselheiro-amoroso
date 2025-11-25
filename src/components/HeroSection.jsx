@@ -14,7 +14,7 @@ function HeroSection() {
             <h1 className="w-full text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold leading-tight">
               It's not always easy to deal with love. <br className="hidden sm:block" /> 
               <span className="sm:hidden"> </span>That's why{" "}
-              <span className="text-[#F14A5B] font-oleo-test">Hitch </span>
+              <span data-testid="hitch-name" className="text-[#F14A5B] font-oleo-test">Hitch </span>
               exists.
             </h1>
             
@@ -36,7 +36,7 @@ function HeroSection() {
               </button>
               
               {showDescription && (
-                <div className="mt-6 overflow-hidden">
+                <div data-testid="hero-description" className="mt-6 overflow-hidden">
                   <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 shadow-lg transform transition-all duration-500 ease-out animate-in slide-in-from-top">
                     Hitch uses generative artificial intelligence to understand the
                     context of your conversations and offer personalized advice. It
