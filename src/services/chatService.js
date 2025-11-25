@@ -2,7 +2,6 @@
 const API_BASE_URL = 'https://hitch-conselheiro-amoroso-production.up.railway.app';
 
 export const chatService = {
-
   async sendMessage(message) {
     try {
       const response = await fetch(`${API_BASE_URL}/chat`, {
@@ -15,17 +14,27 @@ export const chatService = {
       });
 
       if (!response.ok) {
+        // Preserva mensagem específica esperada pelos testes
         throw new Error(`Erro do servidor: ${response.status}`);
       }
 
       const data = await response.json();
       return data;
     } catch (error) {
-      if (error.message.includes('fetch')) {
+      // Se já for erro de servidor, repropaga
+      if (error?.message?.startsWith('Erro do servidor:')) {
+        throw error;
+      }
+
+      const msg = (error && error.message) ? error.message.toLowerCase() : '';
+
+      // Erros de conexão (fetch/network) exceto timeouts tratados como conexão; timeouts ficam genéricos
+      if ((msg.includes('fetch') || msg.includes('network')) && !msg.includes('timeout')) {
         throw new Error('Erro de conexão. Verifique sua internet e tente novamente.');
       }
-      
-      throw new Error(error.message || 'Falha na comunicação com o servidor. Tente novamente.');
+
+      // Fallback genérico (inclui timeout)
+      throw new Error('Falha na comunicação com o servidor. Tente novamente.');
     }
   }
 };

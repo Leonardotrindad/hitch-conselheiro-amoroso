@@ -52,7 +52,7 @@ describe('Chat Page', () => {
       </BrowserRouter>
     );
     
-    expect(screen.getByRole('complementary')).toBeInTheDocument(); // sidebar (aside)
+    expect(screen.getByTestId('sidebar')).toBeInTheDocument(); // sidebar (aside)
     expect(screen.getByRole('main')).toBeInTheDocument();
   });
 
@@ -97,8 +97,7 @@ describe('Chat Page', () => {
         <Chat />
       </BrowserRouter>
     );
-    
-    const sendButton = screen.getByRole('button', { name: '' }); // Botão de enviar (ícone)
+    const sendButton = screen.getByTestId('send-button');
     expect(sendButton).toBeInTheDocument();
   });
 
@@ -138,8 +137,9 @@ describe('Chat Page', () => {
         <Chat />
       </BrowserRouter>
     );
-    
-    const newChatButton = screen.getByText(/New Conversation/i);
+    // Abrir sidebar para revelar texto
+    fireEvent.click(screen.getByTestId('sidebar-toggle'));
+    const newChatButton = screen.getByTestId('new-chat-btn');
     expect(newChatButton).toBeInTheDocument();
   });
 
@@ -149,7 +149,7 @@ describe('Chat Page', () => {
         <Chat />
       </BrowserRouter>
     );
-    
+    fireEvent.click(screen.getByTestId('sidebar-toggle'));
     expect(screen.getByText('Tips')).toBeInTheDocument();
     expect(screen.getByText('Magic')).toBeInTheDocument();
     expect(screen.getByText('Stories')).toBeInTheDocument();
@@ -162,19 +162,17 @@ describe('Chat Page', () => {
       </BrowserRouter>
     );
     
-    const sidebar = screen.getByRole('complementary');
+    const sidebar = screen.getByTestId('sidebar');
+    const menuButton = screen.getByTestId('sidebar-toggle');
     
     // Sidebar deve estar fechada inicialmente (w-12 ou w-16)
-    expect(sidebar).toHaveClass('w-12');
+    expect(sidebar.className).toMatch(/w-12|w-16/);
     
     // Clicar no botão de menu
-    const menuButtons = screen.getAllByRole('button');
-    const menuButton = menuButtons[0]; // Primeiro botão é o toggle da sidebar
-    
     fireEvent.click(menuButton);
     
     // Sidebar deve abrir (w-72 ou w-80)
-    expect(sidebar).toHaveClass('w-72');
+    expect(sidebar.className).toMatch(/w-72|w-80/);
   });
 
   it('deve exibir sugestões de mensagens quando não há chat iniciado', () => {
@@ -263,16 +261,10 @@ describe('Chat Page', () => {
     // Emoji picker não deve estar visível inicialmente
     expect(screen.queryByTestId('emoji-picker')).not.toBeInTheDocument();
     
-    // Encontrar e clicar no botão de emoji (deve ter BsEmojiSmile icon)
-    const buttons = screen.getAllByRole('button');
-    const emojiButton = buttons.find(btn => {
-      const svg = btn.querySelector('svg');
-      return svg !== null;
-    });
+    // Clicar no botão de emoji
+    const emojiButton = screen.getByTestId('emoji-toggle-btn');
+    fireEvent.click(emojiButton);
     
-    if (emojiButton) {
-      fireEvent.click(emojiButton);
-      expect(screen.getByTestId('emoji-picker')).toBeInTheDocument();
-    }
+    expect(screen.getByTestId('emoji-picker')).toBeInTheDocument();
   });
 });

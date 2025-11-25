@@ -184,6 +184,7 @@ function Chat() {
         )}
         
         <aside
+          data-testid="sidebar"
           className={`bg-white border-r border-gray-200 shadow-lg
                      flex flex-col shrink-0 transition-all duration-300 ease-in-out
                      rounded-l-lg sm:rounded-l-2xl lg:rounded-l-3xl relative
@@ -211,6 +212,7 @@ function Chat() {
                 </div>
               )}
               <button
+                data-testid="sidebar-toggle"
                 onClick={toggleSidebar}
                 className="p-2 rounded-lg hover:bg-gray-100 transition-colors text-gray-600"
               >
@@ -221,6 +223,7 @@ function Chat() {
 
           <div className="p-3 sm:p-4 relative z-10">
             <button
+              data-testid="new-chat-btn"
               onClick={handleNewChat}
               className={`group relative overflow-hidden bg-pink-50 border border-pink-200 hover:bg-pink-100 hover:border-pink-300
                          text-gray-700 font-medium rounded-lg transition-all duration-200
@@ -504,6 +507,7 @@ function Chat() {
                   <div className="flex items-center space-x-1 sm:space-x-2">
                     <div className="relative" ref={emojiPickerRef}>
                       <button
+                        data-testid="emoji-toggle-btn"
                         type="button"
                         onClick={toggleEmojiPicker}
                         className={`p-1.5 sm:p-2 rounded-full hover:bg-pink-100 transition-colors ${
@@ -514,7 +518,10 @@ function Chat() {
                       </button>
                       
                       {showEmojiPicker && (
-                        <div className="absolute bottom-full right-0 mb-2 z-50 shadow-2xl rounded-lg overflow-hidden">
+                        <div
+                          className="absolute bottom-full right-0 mb-2 z-50 shadow-2xl rounded-lg overflow-hidden"
+                          data-testid="emoji-picker-container"
+                        >
                           <EmojiPicker
                             onEmojiClick={handleEmojiClick}
                             autoFocusSearch={false}
@@ -533,6 +540,7 @@ function Chat() {
 
                     <button
                       type="submit"
+                      data-testid="send-button"
                       className="p-1.5 sm:p-2 bg-pink-500 hover:bg-pink-600 text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                       disabled={
                         backendLoading || !activeChatId || !inputMessage.trim()

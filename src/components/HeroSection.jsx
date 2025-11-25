@@ -6,7 +6,7 @@ function HeroSection() {
   const [showDescription, setShowDescription] = useState(false);
   return (
     <div className="flex lg:flex-row relative">
-      <div className="w-full bg-[url('/bg-mobile.png')] md:bg-[url('/hero-bg.png')] bg-no-repeat bg-cover bg-center text-left min-h-screen flex items-start justify-center" style={{backgroundAttachment: 'scroll'}}>
+      <div data-testid="hero-bg" className="w-full bg-[url('/bg-mobile.png')] md:bg-[url('/hero-bg.png')] bg-no-repeat bg-cover bg-center text-left min-h-screen flex items-start justify-center" style={{backgroundAttachment: 'scroll'}}>
         <div className="w-full max-w-4xl p-4 sm:p-8 md:p-12 lg:px-16 flex flex-col items-center text-center pt-48 sm:pt-52 md:pt-56">
           
           {/* Bloco do texto principal e Learn more - mais próximo da logo */}

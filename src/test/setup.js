@@ -22,7 +22,19 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 });
 
-// Mock do crypto.randomUUID (usado no Chat)
-global.crypto = {
-  randomUUID: () => Math.random().toString(36).substring(7)
-};
+// Mock robusto do crypto.randomUUID (usado no Chat)
+try {
+  if (typeof globalThis.crypto === 'undefined') {
+    Object.defineProperty(globalThis, 'crypto', {
+      value: { randomUUID: () => Math.random().toString(36).substring(7) },
+      configurable: true,
+    });
+  } else if (typeof globalThis.crypto.randomUUID !== 'function') {
+    Object.defineProperty(globalThis.crypto, 'randomUUID', {
+      value: () => Math.random().toString(36).substring(7),
+      configurable: true,
+    });
+  }
+} catch (e) {
+  // Ignorar caso o ambiente não permita sobrescrever
+}

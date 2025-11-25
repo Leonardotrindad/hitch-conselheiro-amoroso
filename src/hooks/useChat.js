@@ -10,7 +10,7 @@ export const useChat = () => {
     if (!messageText.trim()) return;
 
     const userMessage = {
-      id: Date.now(),
+      id: (globalThis.crypto?.randomUUID?.() || `${Date.now()}-user-${Math.random()}`),
       text: messageText,
       sender: 'user',
       timestamp: new Date().toLocaleTimeString()
@@ -24,7 +24,7 @@ export const useChat = () => {
       const response = await chatService.sendMessage(messageText);
       
       const botMessage = {
-        id: Date.now() + 1,
+        id: (globalThis.crypto?.randomUUID?.() || `${Date.now()}-bot-${Math.random()}`),
         text: response.response,
         sender: 'hitch',
         timestamp: new Date().toLocaleTimeString()
@@ -35,7 +35,7 @@ export const useChat = () => {
       setError(err.message);
       
       const errorMessage = {
-        id: Date.now() + 1,
+        id: (globalThis.crypto?.randomUUID?.() || `${Date.now()}-error-${Math.random()}`),
         text: 'Desculpe, ocorreu um erro. Tente novamente.',
         sender: 'hitch',
         timestamp: new Date().toLocaleTimeString(),

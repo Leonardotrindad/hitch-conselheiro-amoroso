@@ -80,13 +80,13 @@ describe('HeroSection Component', () => {
   });
 
   it('deve ter a imagem de fundo aplicada no container principal', () => {
-    const { container } = render(
+    render(
       <BrowserRouter>
         <HeroSection />
       </BrowserRouter>
     );
-    
-    const bgDiv = container.querySelector('.bg-\\[url\\(\'\\/bg-mobile\\.png\'\\)\\]');
+    const bgDiv = screen.getByTestId('hero-bg');
     expect(bgDiv).toBeInTheDocument();
+    expect(bgDiv).toHaveClass('bg-[url('/bg-mobile.png')]', 'md:bg-[url('/hero-bg.png')]');
   });
 });
