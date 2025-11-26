@@ -4,19 +4,19 @@ O Hitch é uma Inteligência Artificial conselheira amorosa desenvolvida para aj
 
 Tecnologias Utilizadas
 
-Backend: Java 21, Spring Boot (Web, Data JPA, Security, Validation)
-Banco de Dados: H2 Database (Dev) / PostgreSQL (Prod)
-Documentação: Swagger / Google.genai
-Frontend: HTML5, CSS3, JavaScript (JSX), Thymeleaf
+- Backend: Java 21, Spring Boot (Web, Data JPA, Security, Validation)
+- Banco de Dados: H2 Database (Dev) / PostgreSQL (Prod)
+- Documentação: Swagger / Google.genai
+- Frontend: HTML5, CSS3, JavaScript (JSX), Thymeleaf
 
 Equipe de Desenvolvimento
 
-| Scrum Master | Fernanda Mell Albuquerque da Silva |
-| Front-end | Lívia Avelino Neves dos Santos |
-| Back-end | Pedro de Oliveira Silva |
-| QA (Testes) | Natália dos Santos Gonçalves | 
-| IA Generativa | Isabela de Paula Azevedo | 
-| SRE / DevOps | Leonardo de Paula Trindade |
+- Scrum Master | Fernanda Mell Albuquerque da Silva 
+- Front-end | Lívia Avelino Neves dos Santos 
+- Back-end | Pedro de Oliveira Silva 
+- QA (Testes) | Natália dos Santos Gonçalves 
+- IA Generativa | Isabela de Paula Azevedo 
+- SRE / DevOps | Leonardo de Paula Trindade 
 
 Como Rodar o Projeto
 
