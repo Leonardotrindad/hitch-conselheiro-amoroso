@@ -7,7 +7,7 @@ Tecnologias Utilizadas
 - Backend: Java 21, Spring Boot (Web, Data JPA, Security, Validation)
 - Banco de Dados: H2 Database (Dev) / PostgreSQL (Prod)
 - Documentação: Swagger / Google.genai
-- Frontend: HTML5, CSS3, JavaScript (JSX), Thymeleaf
+- Frontend: HTML5, CSS3, JavaScript (JSX), React e Talwind.
 
 Equipe de Desenvolvimento
 
