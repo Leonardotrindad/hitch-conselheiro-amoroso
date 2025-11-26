@@ -55,7 +55,11 @@ function Features() {
             {/* Coluna de Texto */}
             <div className="lg:pr-8">
               <div className="flex items-center mb-3 sm:mb-4">
+<<<<<<< HEAD
                 <span className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-[#F2798F] mr-3 sm:mr-4">
+=======
+                <span data-testid="feature-icon-privacy" className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-[#F2798F] mr-3 sm:mr-4">
+>>>>>>> origin/feature/natalia-tests
                   <feature1.icon className="h-4 w-4 sm:h-6 sm:w-6 text-white" aria-hidden="true" />
                 </span>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">{feature1.name}</h3>
@@ -89,7 +93,11 @@ function Features() {
             {/* Coluna de Texto (Segundo no mobile, mas primeiro no desktop) */}
             <div className="lg:pl-8">
               <div className="flex items-center mb-3 sm:mb-4">
+<<<<<<< HEAD
                 <span className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-[#F2798F] mr-3 sm:mr-4">
+=======
+                <span data-testid="feature-icon-availability" className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-[#F2798F] mr-3 sm:mr-4">
+>>>>>>> origin/feature/natalia-tests
                   <feature2.icon className="h-4 w-4 sm:h-6 sm:w-6 text-white" aria-hidden="true" />
                 </span>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">{feature2.name}</h3>
@@ -105,7 +113,11 @@ function Features() {
             {/* Coluna de Texto */}
             <div className="lg:pr-8">
               <div className="flex items-center mb-3 sm:mb-4">
+<<<<<<< HEAD
                 <span className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-[#F2798F] mr-3 sm:mr-4">
+=======
+                <span data-testid="feature-icon-analysis" className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-[#F2798F] mr-3 sm:mr-4">
+>>>>>>> origin/feature/natalia-tests
                   <feature3.icon className="h-4 w-4 sm:h-6 sm:w-6 text-white" aria-hidden="true" />
                 </span>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900">{feature3.name}</h3>

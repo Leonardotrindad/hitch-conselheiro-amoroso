@@ -6,7 +6,11 @@ function HeroSection() {
   const [showDescription, setShowDescription] = useState(false);
   return (
     <div className="flex lg:flex-row relative">
+<<<<<<< HEAD
       <div className="w-full bg-[url('/bg-mobile.png')] md:bg-[url('/hero-bg.png')] bg-no-repeat bg-cover bg-center text-left min-h-screen flex items-start justify-center" style={{backgroundAttachment: 'scroll'}}>
+=======
+      <div data-testid="hero-bg" className="w-full bg-[url('/bg-mobile.png')] md:bg-[url('/hero-bg.png')] bg-no-repeat bg-cover bg-center text-left min-h-screen flex items-start justify-center" style={{backgroundAttachment: 'scroll'}}>
+>>>>>>> origin/feature/natalia-tests
         <div className="w-full max-w-4xl p-4 sm:p-8 md:p-12 lg:px-16 flex flex-col items-center text-center pt-48 sm:pt-52 md:pt-56">
           
           {/* Bloco do texto principal e Learn more - mais próximo da logo */}
@@ -14,7 +18,11 @@ function HeroSection() {
             <h1 className="w-full text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-extrabold leading-tight">
               It's not always easy to deal with love. <br className="hidden sm:block" /> 
               <span className="sm:hidden"> </span>That's why{" "}
+<<<<<<< HEAD
               <span className="text-[#F14A5B] font-oleo-test">Hitch </span>
+=======
+              <span data-testid="hitch-name" className="text-[#F14A5B] font-oleo-test">Hitch </span>
+>>>>>>> origin/feature/natalia-tests
               exists.
             </h1>
             
@@ -36,7 +44,11 @@ function HeroSection() {
               </button>
               
               {showDescription && (
+<<<<<<< HEAD
                 <div className="mt-6 overflow-hidden">
+=======
+                <div data-testid="hero-description" className="mt-6 overflow-hidden">
+>>>>>>> origin/feature/natalia-tests
                   <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed bg-white/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/20 shadow-lg transform transition-all duration-500 ease-out animate-in slide-in-from-top">
                     Hitch uses generative artificial intelligence to understand the
                     context of your conversations and offer personalized advice. It

@@ -86,17 +86,32 @@ function Chat() {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
+<<<<<<< HEAD
       if (emojiPickerRef.current && !emojiPickerRef.current.contains(event.target)) {
+=======
+      if (
+        emojiPickerRef.current &&
+        !emojiPickerRef.current.contains(event.target)
+      ) {
+>>>>>>> origin/feature/natalia-tests
         setShowEmojiPicker(false);
       }
     };
 
     if (showEmojiPicker) {
+<<<<<<< HEAD
       document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
+=======
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+>>>>>>> origin/feature/natalia-tests
     };
   }, [showEmojiPicker]);
 
@@ -148,25 +163,41 @@ function Chat() {
   const handleSelectChat = (chatId) => {
     setActiveChatId(chatId);
     setIsSidebarOpen(false);
+<<<<<<< HEAD
     clearMessages(); 
+=======
+    clearMessages();
+>>>>>>> origin/feature/natalia-tests
   };
 
   const handleQuickAction = (actionType) => {
     const messages = {
       tips: "Give me some relationship tips to improve my connection with my partner",
       stories: "Tell me a beautiful love story to inspire my relationship",
+<<<<<<< HEAD
       magic: "Share some romantic ideas to create magical moments with my loved one"
     };
     
+=======
+      magic:
+        "Share some romantic ideas to create magical moments with my loved one",
+    };
+
+>>>>>>> origin/feature/natalia-tests
     setInputMessage(messages[actionType]);
   };
 
   const handleEmojiClick = (emojiData) => {
+<<<<<<< HEAD
     setInputMessage(prev => prev + emojiData.emoji);
+=======
+    setInputMessage((prev) => prev + emojiData.emoji);
+>>>>>>> origin/feature/natalia-tests
     setShowEmojiPicker(false);
   };
 
   const toggleEmojiPicker = () => {
+<<<<<<< HEAD
     setShowEmojiPicker(prev => !prev);
   };
 
@@ -178,17 +209,48 @@ function Chat() {
         {/* Mobile overlay */}
         {isSidebarOpen && (
           <div 
+=======
+    setShowEmojiPicker((prev) => !prev);
+  };
+
+  return (
+    <div
+      className="min-h-screen p-2 sm:p-4 lg:p-8 xl:p-20"
+      style={{
+        background:
+          "radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(222, 176, 207, 1) 17%, rgba(189, 181, 219, 1) 54%, rgba(172, 184, 225, 1) 73%, rgba(148, 187, 233, 1) 100%)",
+      }}
+    >
+      <div className="flex w-full h-[calc(100vh-1rem)] sm:h-[calc(100vh-2rem)] lg:h-[calc(100vh-4rem)] xl:h-[calc(100vh-8rem)] bg-white/90 backdrop-blur-xl rounded-lg sm:rounded-2xl lg:rounded-3xl shadow-2xl border border-white/20 overflow-hidden relative">
+        {/* Mobile overlay */}
+        {isSidebarOpen && (
+          <div
+>>>>>>> origin/feature/natalia-tests
             className="fixed inset-0 bg-black/50 z-40 lg:hidden"
             onClick={() => setIsSidebarOpen(false)}
           />
         )}
+<<<<<<< HEAD
         
         <aside
+=======
+
+        <aside
+          data-testid="sidebar"
+>>>>>>> origin/feature/natalia-tests
           className={`bg-white border-r border-gray-200 shadow-lg
                      flex flex-col shrink-0 transition-all duration-300 ease-in-out
                      rounded-l-lg sm:rounded-l-2xl lg:rounded-l-3xl relative
                      ${isSidebarOpen ? "w-72 sm:w-80" : "w-12 sm:w-16"}
+<<<<<<< HEAD
                      ${isSidebarOpen ? "fixed inset-y-0 left-0 z-50 lg:relative lg:z-auto" : "relative"}`}
+=======
+                     ${
+                       isSidebarOpen
+                         ? "fixed inset-y-0 left-0 z-50 lg:relative lg:z-auto"
+                         : "relative"
+                     }`}
+>>>>>>> origin/feature/natalia-tests
         >
           <div className="p-3 sm:p-4 border-b border-gray-200 relative z-10 bg-gray-50">
             <div
@@ -199,18 +261,35 @@ function Chat() {
               {isSidebarOpen && (
                 <div className="flex items-center space-x-3 ">
                   <div>
+<<<<<<< HEAD
                     <Link to="/" className="block hover:opacity-80 transition-opacity duration-200">
+=======
+                    <Link
+                      to="/"
+                      className="block hover:opacity-80 transition-opacity duration-200"
+                    >
+>>>>>>> origin/feature/natalia-tests
                       <img
                         src="logo_hitch.png"
                         alt="Logo Hitch AI"
                         className="w-auto h-12 cursor-pointer"
                       />
                     </Link>
+<<<<<<< HEAD
                     <p className="text-xs text-gray-500 ml-4 sm:ml-6">Love Advisor</p>
+=======
+                    <p className="text-xs text-gray-500 ml-4 sm:ml-6">
+                      Love Advisor
+                    </p>
+>>>>>>> origin/feature/natalia-tests
                   </div>
                 </div>
               )}
               <button
+<<<<<<< HEAD
+=======
+                data-testid="sidebar-toggle"
+>>>>>>> origin/feature/natalia-tests
                 onClick={toggleSidebar}
                 className="p-2 rounded-lg hover:bg-gray-100 transition-colors text-gray-600"
               >
@@ -221,6 +300,10 @@ function Chat() {
 
           <div className="p-3 sm:p-4 relative z-10">
             <button
+<<<<<<< HEAD
+=======
+              data-testid="new-chat-btn"
+>>>>>>> origin/feature/natalia-tests
               onClick={handleNewChat}
               className={`group relative overflow-hidden bg-pink-50 border border-pink-200 hover:bg-pink-100 hover:border-pink-300
                          text-gray-700 font-medium rounded-lg transition-all duration-200
@@ -233,11 +316,23 @@ function Chat() {
               <div className="absolute inset-0 rounded-lg bg-pink-200/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <HiPlus
                 className={`relative z-10 text-pink-600  group-hover:scale-110 transition-transform ${
+<<<<<<< HEAD
                   isSidebarOpen ? "w-3 h-3 sm:w-4 sm:h-4" : "w-4 h-4 sm:w-5 sm:h-5"
                 }`}
               />
               {isSidebarOpen && (
                 <span className="relative z-10 group-hover:text-pink-700 transition-colors text-xs sm:text-sm">New Conversation</span>
+=======
+                  isSidebarOpen
+                    ? "w-3 h-3 sm:w-4 sm:h-4"
+                    : "w-4 h-4 sm:w-5 sm:h-5"
+                }`}
+              />
+              {isSidebarOpen && (
+                <span className="relative z-10 group-hover:text-pink-700 transition-colors text-xs sm:text-sm">
+                  New Conversation
+                </span>
+>>>>>>> origin/feature/natalia-tests
               )}
             </button>
           </div>
@@ -245,6 +340,7 @@ function Chat() {
           {isSidebarOpen && (
             <div className="px-3 sm:px-4 mb-3 sm:mb-4 relative z-10">
               <div className="grid grid-cols-3 gap-1 sm:gap-2">
+<<<<<<< HEAD
                 <button 
                   onClick={() => handleQuickAction('tips')}
                   className="p-2 sm:p-3 rounded-lg bg-gray-50 hover:bg-gray-100 border border-gray-200 hover:border-gray-300 transition-all duration-200 group"
@@ -265,6 +361,34 @@ function Chat() {
                 >
                   <HiChat className="w-4 h-4 sm:w-5 sm:h-5 text-rose-600 mx-auto mb-1 group-hover:scale-110 transition-transform" />
                   <span className="text-xs text-gray-700 font-medium">Stories</span>
+=======
+                <button
+                  onClick={() => handleQuickAction("tips")}
+                  className="p-2 sm:p-3 rounded-lg bg-gray-50 hover:bg-gray-100 border border-gray-200 hover:border-gray-300 transition-all duration-200 group"
+                >
+                  <HiLightBulb className="w-4 h-4 sm:w-5 sm:h-5 text-pink-600 mx-auto mb-1 group-hover:scale-110 transition-transform" />
+                  <span className="text-xs text-gray-700 font-medium">
+                    Tips
+                  </span>
+                </button>
+                <button
+                  onClick={() => handleQuickAction("magic")}
+                  className="p-2 sm:p-3 rounded-lg bg-gray-50 hover:bg-gray-100 border border-gray-200 hover:border-gray-300 transition-all duration-200 group"
+                >
+                  <BsStars className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600 mx-auto mb-1 group-hover:scale-110 transition-transform" />
+                  <span className="text-xs text-gray-700 font-medium">
+                    Magic
+                  </span>
+                </button>
+                <button
+                  onClick={() => handleQuickAction("stories")}
+                  className="p-2 sm:p-3 rounded-lg bg-gray-50 hover:bg-gray-100 border border-gray-200 hover:border-gray-300 transition-all duration-200 group"
+                >
+                  <HiChat className="w-4 h-4 sm:w-5 sm:h-5 text-rose-600 mx-auto mb-1 group-hover:scale-110 transition-transform" />
+                  <span className="text-xs text-gray-700 font-medium">
+                    Stories
+                  </span>
+>>>>>>> origin/feature/natalia-tests
                 </button>
               </div>
             </div>
@@ -336,10 +460,21 @@ function Chat() {
                       />
                     </div>
                     <div>
+<<<<<<< HEAD
                       <h2 className="font-bold text-gray-800 text-sm sm:text-base">Hitch</h2>
                       <div className="text-xs text-gray-600 flex items-center space-x-1">
                         <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                         <span className="hidden sm:inline">Always here to help</span>
+=======
+                      <h2 className="font-bold text-gray-800 text-sm sm:text-base">
+                        Hitch
+                      </h2>
+                      <div className="text-xs text-gray-600 flex items-center space-x-1">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <span className="hidden sm:inline">
+                          Always here to help
+                        </span>
+>>>>>>> origin/feature/natalia-tests
                         <span className="sm:hidden">Online</span>
                       </div>
                     </div>
@@ -351,7 +486,12 @@ function Chat() {
                 ref={chatContainerRef}
                 className="flex-1 overflow-y-auto p-3 sm:p-4 lg:p-8 relative"
                 style={{
+<<<<<<< HEAD
                   background: 'linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)'
+=======
+                  background:
+                    "linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)",
+>>>>>>> origin/feature/natalia-tests
                 }}
               >
                 <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
@@ -467,6 +607,7 @@ function Chat() {
               <div className="flex-1 flex flex-col justify-center items-center p-4 sm:p-6 text-center">
                 <div className="space-y-6 sm:space-y-8 max-w-2xl mx-auto">
                   <div className="space-y-4 flex items-center justify-center flex-col">
+<<<<<<< HEAD
                      <span className="flex flex-row items-center justify-center">
                         <img
                           src="img_features.png"
@@ -474,6 +615,15 @@ function Chat() {
                           className="w-auto h-32 sm:h-40 lg:h-48 max-w-full"
                         />
                       </span>
+=======
+                    <span className="flex flex-row items-center justify-center">
+                      <img
+                        src="img_features.png"
+                        alt="Logo Hitch AI"
+                        className="w-auto h-32 sm:h-40 lg:h-48 max-w-full"
+                      />
+                    </span>
+>>>>>>> origin/feature/natalia-tests
                     <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 flex items-center justify-center">
                       Welcome!
                     </h1>
@@ -490,8 +640,11 @@ function Chat() {
             <div className="max-w-4xl mx-auto">
               <form onSubmit={handleSendMessage} className="relative">
                 <div className="flex items-center space-x-2 sm:space-x-4 bg-white/90 backdrop-blur-sm border border-pink-200/50 rounded-xl py-2 px-3 sm:px-4 shadow-lg focus-within:border-pink-400 focus-within:shadow-xl transition-all">
+<<<<<<< HEAD
                 
 
+=======
+>>>>>>> origin/feature/natalia-tests
                   <input
                     type="text"
                     placeholder="Share your thoughts with Hitch..."
@@ -504,17 +657,36 @@ function Chat() {
                   <div className="flex items-center space-x-1 sm:space-x-2">
                     <div className="relative" ref={emojiPickerRef}>
                       <button
+<<<<<<< HEAD
                         type="button"
                         onClick={toggleEmojiPicker}
                         className={`p-1.5 sm:p-2 rounded-full hover:bg-pink-100 transition-colors ${
                           showEmojiPicker ? 'bg-pink-100 text-pink-600' : 'text-gray-500 hover:text-pink-600'
+=======
+                        data-testid="emoji-toggle-btn"
+                        type="button"
+                        onClick={toggleEmojiPicker}
+                        className={`p-1.5 sm:p-2 rounded-full hover:bg-pink-100 transition-colors ${
+                          showEmojiPicker
+                            ? "bg-pink-100 text-pink-600"
+                            : "text-gray-500 hover:text-pink-600"
+>>>>>>> origin/feature/natalia-tests
                         }`}
                       >
                         <BsEmojiSmile className="w-4 h-4 sm:w-5 sm:h-5" />
                       </button>
+<<<<<<< HEAD
                       
                       {showEmojiPicker && (
                         <div className="absolute bottom-full right-0 mb-2 z-50 shadow-2xl rounded-lg overflow-hidden">
+=======
+
+                      {showEmojiPicker && (
+                        <div
+                          className="absolute bottom-full right-0 mb-2 z-50 shadow-2xl rounded-lg overflow-hidden"
+                          data-testid="emoji-picker-container"
+                        >
+>>>>>>> origin/feature/natalia-tests
                           <EmojiPicker
                             onEmojiClick={handleEmojiClick}
                             autoFocusSearch={false}
@@ -524,7 +696,11 @@ function Chat() {
                             searchDisabled={false}
                             skinTonesDisabled={false}
                             previewConfig={{
+<<<<<<< HEAD
                               showPreview: false
+=======
+                              showPreview: false,
+>>>>>>> origin/feature/natalia-tests
                             }}
                           />
                         </div>
@@ -533,6 +709,10 @@ function Chat() {
 
                     <button
                       type="submit"
+<<<<<<< HEAD
+=======
+                      data-testid="send-button"
+>>>>>>> origin/feature/natalia-tests
                       className="p-1.5 sm:p-2 bg-pink-500 hover:bg-pink-600 text-white rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                       disabled={
                         backendLoading || !activeChatId || !inputMessage.trim()

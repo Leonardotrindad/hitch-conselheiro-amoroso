@@ -23,7 +23,11 @@ dist-ssr
 *.sln
 *.sw?
 <<<<<<< HEAD
+<<<<<<< HEAD
 *.env
 =======
 *.env
 >>>>>>> origin/feature/livia-frontend
+=======
+*.env
+>>>>>>> origin/feature/natalia-tests
