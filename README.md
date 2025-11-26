@@ -27,4 +27,4 @@ Como Rodar o Projeto
    http://localhost:8080/swagger-ui/index.html
 
 
-Projeto desenvolvido para a disciplina Tópicos Especiais em Sistemas para Internet.
+Projeto desenvolvido para a disciplina Tópicos Especiais em Sistemas para Internet II.
